@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="libmariadb">
+      <UniqueIdentifier>{0846a443-250f-4a9b-8dd3-1e32f5c30614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libmariadb\lib">
+      <UniqueIdentifier>{d9be49bb-a25f-4ab2-9ece-23e50dea7bcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TlPrizeSender.h">
@@ -38,6 +44,84 @@
     </ClInclude>
     <ClInclude Include="CAppConfig.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\errmsg.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_common.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_compress.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_context.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_crypt.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_decimal.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_global.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_hash.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_hashtbl.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_list.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_priv.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_pthread.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_pvio.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_server_error.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_string.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_sys.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\ma_tls.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_async.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_com.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_ctype.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_dyncol.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_rpl.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_stmt.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mysql.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mysqld_error.h">
+      <Filter>libmariadb</Filter>
+    </ClInclude>
+    <ClInclude Include="libmariadb\include\mariadb_version.h">
+      <Filter>libmariadb</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,10 +151,29 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="config\config.ini" />
+    <None Include="libmariadb\include\ma_config.h.in">
+      <Filter>libmariadb</Filter>
+    </None>
+    <None Include="libmariadb\include\mariadb_version.h.in">
+      <Filter>libmariadb</Filter>
+    </None>
+    <None Include="libmariadb\lib\libmariadb.exp">
+      <Filter>libmariadb\lib</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\TlPrizeSender.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libmariadb\lib\libmariadb.lib">
+      <Filter>libmariadb\lib</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="libmariadb\lib\libmariadb.dll">
+      <Filter>libmariadb\lib</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

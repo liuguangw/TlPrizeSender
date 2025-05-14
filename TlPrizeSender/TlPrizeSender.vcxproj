@@ -76,6 +76,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <IncludePath>$(ProjectDir)libmariadb\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)libmariadb\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -85,6 +88,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <IncludePath>$(ProjectDir)libmariadb\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)libmariadb\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -186,6 +192,32 @@
     <ClInclude Include="CAppConfig.h" />
     <ClInclude Include="CDatabaseSettingDlg.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="libmariadb\include\errmsg.h" />
+    <ClInclude Include="libmariadb\include\mariadb_async.h" />
+    <ClInclude Include="libmariadb\include\mariadb_com.h" />
+    <ClInclude Include="libmariadb\include\mariadb_ctype.h" />
+    <ClInclude Include="libmariadb\include\mariadb_dyncol.h" />
+    <ClInclude Include="libmariadb\include\mariadb_rpl.h" />
+    <ClInclude Include="libmariadb\include\mariadb_stmt.h" />
+    <ClInclude Include="libmariadb\include\mariadb_version.h" />
+    <ClInclude Include="libmariadb\include\ma_common.h" />
+    <ClInclude Include="libmariadb\include\ma_compress.h" />
+    <ClInclude Include="libmariadb\include\ma_context.h" />
+    <ClInclude Include="libmariadb\include\ma_crypt.h" />
+    <ClInclude Include="libmariadb\include\ma_decimal.h" />
+    <ClInclude Include="libmariadb\include\ma_global.h" />
+    <ClInclude Include="libmariadb\include\ma_hash.h" />
+    <ClInclude Include="libmariadb\include\ma_hashtbl.h" />
+    <ClInclude Include="libmariadb\include\ma_list.h" />
+    <ClInclude Include="libmariadb\include\ma_priv.h" />
+    <ClInclude Include="libmariadb\include\ma_pthread.h" />
+    <ClInclude Include="libmariadb\include\ma_pvio.h" />
+    <ClInclude Include="libmariadb\include\ma_server_error.h" />
+    <ClInclude Include="libmariadb\include\ma_string.h" />
+    <ClInclude Include="libmariadb\include\ma_sys.h" />
+    <ClInclude Include="libmariadb\include\ma_tls.h" />
+    <ClInclude Include="libmariadb\include\mysql.h" />
+    <ClInclude Include="libmariadb\include\mysqld_error.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -209,10 +241,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="config\config.ini" />
+    <None Include="libmariadb\include\mariadb_version.h.in" />
+    <None Include="libmariadb\include\ma_config.h.in" />
+    <CopyFileToFolders Include="libmariadb\lib\libmariadb.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CopyFileToFolders>
+    <None Include="libmariadb\lib\libmariadb.exp" />
     <None Include="res\TlPrizeSender.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\TlPrizeSender.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libmariadb\lib\libmariadb.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
