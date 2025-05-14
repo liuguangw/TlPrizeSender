@@ -123,6 +123,9 @@
     <ClInclude Include="libmariadb\include\mariadb_version.h">
       <Filter>libmariadb</Filter>
     </ClInclude>
+    <ClInclude Include="dbAction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TlPrizeSender.cpp">
@@ -140,6 +143,9 @@
     <ClCompile Include="CAppConfig.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dbAction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TlPrizeSender.rc">
@@ -150,7 +156,6 @@
     <None Include="res\TlPrizeSender.rc2">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="config\config.ini" />
     <None Include="libmariadb\include\ma_config.h.in">
       <Filter>libmariadb</Filter>
     </None>
@@ -175,5 +180,6 @@
     <CopyFileToFolders Include="libmariadb\lib\libmariadb.dll">
       <Filter>libmariadb\lib</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="config\config.ini" />
   </ItemGroup>
 </Project>

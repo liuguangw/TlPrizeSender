@@ -32,7 +32,6 @@ protected:
 	virtual BOOL OnInitDialog();
 	// 校验用户名是否为空
 	void AFXAPI DDV_UsernameNotEmpty(CDataExchange* pDX, CString const& value);
-	void processSendPrize(const CString& username, int world, int charguid, int item, int count);
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();

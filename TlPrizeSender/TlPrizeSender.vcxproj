@@ -191,6 +191,7 @@
   <ItemGroup>
     <ClInclude Include="CAppConfig.h" />
     <ClInclude Include="CDatabaseSettingDlg.h" />
+    <ClInclude Include="dbAction.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="libmariadb\include\errmsg.h" />
     <ClInclude Include="libmariadb\include\mariadb_async.h" />
@@ -227,6 +228,7 @@
   <ItemGroup>
     <ClCompile Include="CAppConfig.cpp" />
     <ClCompile Include="CDatabaseSettingDlg.cpp" />
+    <ClCompile Include="dbAction.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -240,12 +242,16 @@
     <ResourceCompile Include="TlPrizeSender.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="config\config.ini" />
+    <CopyFileToFolders Include="config\config.ini">
+      <FileType>Document</FileType>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\config\</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)\config\</DestinationFolders>
+    </CopyFileToFolders>
     <None Include="libmariadb\include\mariadb_version.h.in" />
     <None Include="libmariadb\include\ma_config.h.in" />
     <CopyFileToFolders Include="libmariadb\lib\libmariadb.dll">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </CopyFileToFolders>
     <None Include="libmariadb\lib\libmariadb.exp" />
