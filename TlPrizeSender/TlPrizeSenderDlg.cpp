@@ -282,7 +282,7 @@ void CTlPrizeSenderDlg::processSendPrize(const CString& username, int world, int
 	}
 
 	// 3. 准备 SQL 插入语句
-	const char* sql_query = "INSERT INTO account_prize (account, world, charguid, itemid, itemnum, isget, validtime) VALUES (?, ?, ?, ?, ?,0, 0)";
+	const char* sql_query = "INSERT INTO account_prize (account, world, charguid, itemid, itemnum, isget, validtime) VALUES (?, ?, ?, ?, ?, 0, ?)";
 
 	stmt = mysql_stmt_init(conn);
 	if (stmt == nullptr) {
@@ -301,7 +301,7 @@ void CTlPrizeSenderDlg::processSendPrize(const CString& username, int world, int
 	}
 
 	// 4. 绑定参数
-	MYSQL_BIND params[5];
+	MYSQL_BIND params[6];
 	memset(params, 0, sizeof(params)); // 初始化 MYSQL_BIND 结构体数组
 
 	int paramIndex = 0;
@@ -338,6 +338,16 @@ void CTlPrizeSenderDlg::processSendPrize(const CString& username, int world, int
 	//count
 	params[paramIndex].buffer_type = FIELD_TYPE_LONG;
 	params[paramIndex].buffer = (char*)&count;
+	params[paramIndex].is_null = 0;
+	params[paramIndex].length = 0;
+	paramIndex++;
+	
+	// 获取当前系统时间
+	CTime currentTime = CTime::GetCurrentTime();
+	time_t timestamp = currentTime.GetTime();
+	int timestampU4 = (int)(timestamp & 0xFFFFFFFF);
+	params[paramIndex].buffer_type = FIELD_TYPE_LONG;
+	params[paramIndex].buffer = (char*)&timestampU4;
 	params[paramIndex].is_null = 0;
 	params[paramIndex].length = 0;
 	paramIndex++;
