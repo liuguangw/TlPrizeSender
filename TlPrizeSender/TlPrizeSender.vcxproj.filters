@@ -181,5 +181,6 @@
       <Filter>libmariadb\lib</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="config\config.ini" />
+    <CopyFileToFolders Include="note.txt" />
   </ItemGroup>
 </Project>

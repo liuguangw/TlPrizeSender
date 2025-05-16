@@ -1,0 +1,7 @@
+billing要使用v1.3.5或者更高版本
+https://github.com/liuguangw/billing_go/releases
+
+服务端大理龚彩云的lua脚本中，需要启用的事件ID: 808062
+发放成功之后，即可找大理龚彩云领取活动奖励。
+
+物品ID需要是正确的id, 支持CommonItem.txt、EquipBase.txt、GemInfo.txt中的 id 号

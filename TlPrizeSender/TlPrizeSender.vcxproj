@@ -264,6 +264,9 @@
   <ItemGroup>
     <Library Include="libmariadb\lib\libmariadb.lib" />
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="note.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
